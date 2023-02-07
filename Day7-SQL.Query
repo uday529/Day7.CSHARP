@@ -1,0 +1,294 @@
+Switch Case:
+mandatory to have break in every case:
+ 	   int month;
+            Console.WriteLine("enter the month");
+            month= int.Parse(Console.ReadLine());
+            switch(month)
+            {
+                case 1:
+                    Console.WriteLine("jan");
+                    break; 
+                case 2:
+                    Console.WriteLine("feb");
+                    break;
+                case 3:
+                    Console.WriteLine("mar");
+                    break;
+                default:
+                    Console.WriteLine("enter valid one");
+                    break;
+
+Getting an error I have to rectify 
+int Num1, Num2,choice;
+            char select;
+            Console.WriteLine("I am calculator i will help you");
+            Console.WriteLine("ENTER THE VALUE 1");
+            Num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("ENTER THE VALUE 2");
+            Num2 = int.Parse(Console.ReadLine());
+            do
+            {
+                Console.WriteLine("1 for addition 2 for subtraction 3 for multiplication 4 for division");
+                choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("after addition the value  :" + (Num1 + Num2));
+                        break;
+                    case 2:
+                        Console.WriteLine("after addition the value  :" + (Num1 - Num2));
+                        break;
+                    case 3:
+                        Console.WriteLine("after addition the value  :" + (Num1 * Num2));
+                        break;
+                    case 4:
+                        Console.WriteLine("after addition the value  :" + (Num1 / Num2));
+                        break;
+                    default:
+                        Console.WriteLine("give the correct option for operations");
+                        break;
+
+                }
+                Console.WriteLine("are you intrested in continuing");
+                select = char.Parse(Console.ReadLine());
+            } while (select == 'y' || select = 'Y');
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Arrays:
+collection of homogeneous data
+
+            int[] numbers = new int [5];
+            int[] marks ={ 12,44,455,56};
+            char[] alphab ={ 'a', 'b', 'c', };
+            string[] names = { "Dada", "Hemnath", "Roshan", "Bhanu" };
+
+for accessing of the array we have different methods like
+Console.WriteLine(alphab);
+Using the for loop we can enter the input:
+
+ int[] marks = new int[5];
+for(int i=0;i<marks.Length;i++)
+            {
+                Console.WriteLine("enter the marks ");
+                marks[i] = int.Parse(Console.ReadLine());
+Finding the index:
+ int[] numbers = new int[5];
+            int[] marks = { 34, 76, 39, 43, 67 };
+            //finding the element at given index
+            int index = int.Parse(Console.ReadLine());
+            Console.WriteLine(marks[index]);
+            Console.WriteLine("enter the number");
+            int number = int.Parse(Console.ReadLine());
+            Console.WriteLine(Array.FindIndex(marks,t => t == number));
+            }
+            for (int i = 0; i < marks.Length; i++)
+            {
+                Console.WriteLine(marks[i]);
+            }
+for each:
+no index is needed
+temparary var used
+array name used at last
+
+      ---error---
+            foreach (int s_marks in marks) ;
+                {
+                Console.WriteLine(s_marks);
+                }
+Sorting of array:
+ Array.Sort(marks);
+            foreach (int i in marks)
+            {       
+                Console.WriteLine(i);
+            }
+
+Reversing of array:
+Array.Reverse(marks);
+            foreach (int i in marks)
+            {
+                Console.WriteLine(i);
+            }
+
+
+without parse convert method can be used:
+
+ marks[i]=Convert.ToInt32(Console.ReadLine());
+            }
+
+--------------------------------------------------------------------------------------------------------------------
+
+int[] numbers = new int[5];
+            int[] marks = { 34, 76, 90, 42, 67 };
+
+            //finding the element at given index
+            int index = int.Parse(Console.ReadLine());
+            Console.WriteLine(marks[index]);
+            Console.WriteLine("enter the number");
+            int number = int.Parse(Console.ReadLine());
+            Console.WriteLine(Array.FindIndex(marks,t => t == number));
+            Console.WriteLine("Display first even numbers");
+            Console.WriteLine(Array.Find(marks,t => t%2 == 0));
+
+            foreach (int num in Array.FindAll(marks, t => t % 2 == 0)) ;
+            {
+                Console.WriteLine(num);
+            }
+ for (int i = 0; i < marks.Length; i++)
+            {
+                Sum = Sum + marks[i];
+
+            }
+            Console.WriteLine("The Average Marks =" + Sum / marks.Length);
+
+
+
+                ;
+                foreach (int num in Array.FindAll(marks, num => Sum / marks.Length < marks[i]))
+                {
+                    Console.WriteLine(num);
+                }
+
+Object oriented Methodolgy:
+to create a real world entity we create class
+Create class
+add ---> class ---->Name
+constructor   same name as class but not have any return type
+constructor is used to create tge objects of classand tointiliase values for private attributes
+--Consttructor overloading   writing more cinstructors for a class--
+
+Employee emp1=new Employee();    --Default constructor--
+
+
+properties:
+
+
+private int employeeId;
+private string employeename;
+private string employeeemail;
+private long employeecontact;
+// constructor
+public Employee()
+{
+}
+
+---------------------------------------------------------------------------------------------------------
+In the class we have to save :
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Class_Objects
+{
+    internal class Employee
+    {
+        private int employeeId;
+        private string employeename;
+        private string employeeemail;
+        private long employeecontact;
+
+        public int EmployeeId
+        {
+            set
+            {
+                employeeId = value;
+            }
+            get
+            {
+                return employeeId;
+            }
+        }
+
+        public string Employeename
+        {
+            set
+            {
+                employeename = value;
+            }
+
+            get
+            {
+                return employeename;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return employeeemail;
+            }
+            set
+            {
+                employeeemail = value;
+            }
+        }
+
+        public long Contact
+        {
+            get
+            {
+                return employeecontact;
+            }
+            set
+            {
+                employeecontact = value;
+            }
+        }
+
+
+        public void PrintDetails()
+        {
+            Console.WriteLine("Employee Id is :" + EmployeeId);
+            Console.WriteLine("Employee Name is :" + Employeename);
+            Console.WriteLine("Employee Contact is :" + employeecontact);
+            Console.WriteLine("Employee Email is :" + employeeemail);
+        }
+
+    }
+}
+
+--------------------------------------------------------------------------------
+In program.cs:
+using System;
+
+namespace Class_Objects
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+
+        {
+            Employee emp = new Employee();
+            Employee uday= new Employee();
+
+            char choice;
+
+
+            do
+            {
+                uday = new Employee();
+                Console.WriteLine("entet the emplotee details ");
+
+                Console.WriteLine("write the emplotyee id");
+                uday.EmployeeId = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("enter tge employee name ");
+                uday.Employeename = Console.ReadLine();
+
+                Console.WriteLine("enter the emplyee mobile number");
+                uday.Contact = long.Parse(Console.ReadLine());
+
+                Console.WriteLine("enter tge email id ");
+                uday.Email = Console.ReadLine();
+
+                uday.PrintDetails();
+                Console.WriteLine("Do you want to continue(y/n)");
+
+                choice = char.Parse(Console.ReadLine());
+            } while (choice == 'Y' || choice == 'y');
+
+        }
+    }
+}
